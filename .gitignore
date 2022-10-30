@@ -1,3 +1,4 @@
-.yarn/*
-.cache/*
-base/*
+.yarn
+.cache
+base
+node_modules
