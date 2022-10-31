@@ -1,6 +1,7 @@
 // If you don't want to use TypeScript you can delete this file!
 import * as React from "react"
 import { PageProps, Link, graphql, HeadFC } from "gatsby"
+import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -15,11 +16,16 @@ const Homepage: React.FC<PageProps<DataProps>> = ({
   data,
   location,
 }) => (
-  <Layout>
-    <h1>
-      Gatsby supports <b>TypeScript by default</b>
-    </h1>
-    
+  <Layout noHeader>
+    <StaticImage
+        src="../images/logo_landing.png"
+        loading="eager"
+        width={800}
+        quality={100}
+        formats={["auto", "webp", "avif"]}
+        alt=""
+        style={{ marginBottom: `var(--space-3)` }}
+      />
   </Layout>
 )
 

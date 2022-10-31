@@ -10,8 +10,17 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import "./layout.css"
+import Footer from "./footer";
 
-const Layout: React.FC<any> = ({ children }) => {
+export interface LayoutProps {
+  noHeader?: boolean;
+  footer?: React.ReactNode;
+  header?: React.ReactNode;
+  noFooter?: boolean;
+  children: React.ReactElement | React.ReactNode
+}
+
+const Layout: React.FC<LayoutProps> = ({ noHeader = false, header, noFooter = false, footer, children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -24,7 +33,7 @@ const Layout: React.FC<any> = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      {header ? header : !noHeader && <Header siteTitle={data.site.siteMetadata?.title || `Title`} />}
       <div
         style={{
           margin: `0 auto`,
@@ -32,17 +41,8 @@ const Layout: React.FC<any> = ({ children }) => {
           padding: `var(--size-gutter)`,
         }}
       >
-        <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `var(--space-5)`,
-            fontSize: `var(--font-sm)`,
-          }}
-        >
-          © {new Date().getFullYear()} &middot;
-          {` `}
-          <a href="https://www.premios-aquila.pt">Prémios Áquila</a>
-        </footer>
+        <main style={{height: '80vh'}}>{children}</main>
+        {footer ? footer : !noFooter && <Footer />}
       </div>
     </>
   )
