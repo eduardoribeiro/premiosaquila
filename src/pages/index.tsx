@@ -5,6 +5,11 @@ import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Grid from "@mui/material/Grid"
+import { partners } from "../content/partners"
+import Partners from "../components/Homepage/Partners"
+import theme from "../theme"
+import { Typography } from "@mui/material"
 
 type DataProps = {
   site: {
@@ -12,20 +17,18 @@ type DataProps = {
   }
 }
 
-const Homepage: React.FC<PageProps<DataProps>> = ({
-  data,
-  location,
-}) => (
+const Homepage: React.FC<PageProps<DataProps>> = ({ data, location }) => (
   <Layout noHeader>
     <StaticImage
-        src="../images/logo_landing.png"
-        loading="eager"
-        width={800}
-        quality={100}
-        formats={["auto", "webp", "avif"]}
-        alt=""
-        style={{ marginBottom: `var(--space-3)` }}
-      />
+      src="../images/logo_landing.png"
+      loading="eager"
+      width={800}
+      quality={100}
+      formats={["auto", "webp", "avif"]}
+      alt=""
+      style={{ marginBottom: `var(--space-3)` }}
+    />
+    <Partners partnersData={partners} />
   </Layout>
 )
 

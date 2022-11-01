@@ -11,6 +11,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
 import Footer from "./footer";
+import TopLayout from "./top-layout";
+import theme from "../theme";
 
 export interface LayoutProps {
   noHeader?: boolean;
@@ -32,7 +34,7 @@ const Layout: React.FC<LayoutProps> = ({ noHeader = false, header, noFooter = fa
   `)
 
   return (
-    <>
+    <TopLayout theme={theme}>
       {header ? header : !noHeader && <Header siteTitle={data.site.siteMetadata?.title || `Title`} />}
       <div
         style={{
@@ -44,7 +46,7 @@ const Layout: React.FC<LayoutProps> = ({ noHeader = false, header, noFooter = fa
         <main style={{height: '80vh'}}>{children}</main>
         {footer ? footer : !noFooter && <Footer />}
       </div>
-    </>
+    </TopLayout>
   )
 };
 
