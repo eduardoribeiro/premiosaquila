@@ -13,7 +13,7 @@ const Footer: React.FC<any> = ({ children }) => (
       <>
         © {new Date().getFullYear()} &middot;
         {` `}
-        <a href="https://www.premios-aquila.pt">Prémios Áquila</a>
+        <a href="https://www.premios-aquila.pt">Fénix Associação Cinematográfica</a>
       </>
     )}
   </footer>
