@@ -43,7 +43,7 @@ const Layout: React.FC<LayoutProps> = ({ noHeader = false, header, noFooter = fa
           padding: `var(--size-gutter)`,
         }}
       >
-        <main style={{height: '80vh'}}>{children}</main>
+        <main style={{minHeight: '80vh'}}>{children}</main>
         {footer ? footer : !noFooter && <Footer />}
       </div>
     </TopLayout>
