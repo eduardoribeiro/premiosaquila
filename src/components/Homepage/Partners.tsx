@@ -11,7 +11,7 @@ export interface PartnersProps {
 const Partners = ({partnersData}:PartnersProps) => (
   <Box>
     <Typography variant="h6" sx={{ margin: theme.spacing(8, 0, 1, 0) }}>
-      Partners
+      PARCEIROS
     </Typography>
     <Grid container spacing={2} sx={{ padding: theme.spacing(2, 0) }}>
       {partnersData.map(partner => (

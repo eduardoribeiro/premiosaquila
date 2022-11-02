@@ -4,6 +4,7 @@ import { PartnersLogos } from "../content/partners"
 import Card from "@mui/material/Card"
 import { CardActionArea } from "gatsby-theme-material-ui"
 import CardContent from "@mui/material/CardContent"
+import Img from "gatsby-image"
 
 const PartnerLogo = ({
   image,
@@ -15,15 +16,7 @@ const PartnerLogo = ({
   <Card>
     <CardActionArea>
       <CardContent>
-        <StaticImage
-          src={image}
-          loading="eager"
-          width={width}
-          quality={quality}
-          formats={["auto", "webp", "avif"]}
-          alt={alt}
-          style={{ marginBottom: `var(--space-3)` }}
-        />
+        <img src={image} alt={alt} title={alt} />
       </CardContent>
     </CardActionArea>
   </Card>
