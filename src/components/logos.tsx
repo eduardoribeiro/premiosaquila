@@ -6,17 +6,21 @@ import { CardActionArea } from "gatsby-theme-material-ui"
 import CardContent from "@mui/material/CardContent"
 import theme from "../theme"
 
+export interface PartnersLogosButton extends PartnersLogos {
+  onClick: () => void;
+}
+
 const PartnerLogo = ({
   image,
-  width = 'auto',
+  width = 100,
   quality = 100,
     alt = "",
-  link
-}: PartnersLogos) => (
+  onClick
+}: PartnersLogosButton) => (
   <Card>
-    <CardActionArea sx={{height: 100}}>
+    <CardActionArea sx={{ height: 100 }} title={alt} onClick={onClick}>
       <CardContent sx={{display: 'flex', maxHeight: 96, justifyContent: 'center', alignItems: 'center', padding: theme.spacing(2)}}>
-        <img src={image} alt={alt} title={alt} width={width} style={{maxHeight: 100}} />
+        <img src={image} alt={alt} title={alt} style={{maxHeight: 100}} />
       </CardContent>
     </CardActionArea>
   </Card>
