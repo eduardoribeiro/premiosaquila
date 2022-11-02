@@ -18,7 +18,7 @@ const Partners = ({ partnersData }: PartnersProps) => {
       PARCEIROS
     </Typography>
     {/* <Grid container spacing={2} sx={{ padding: theme.spacing(2, 0) }}> */}
-    <Stack direction="row" spacing={2}>
+    <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
       {partnersData.map(partner => (
         <PartnerLogo
           key={partner.image}
