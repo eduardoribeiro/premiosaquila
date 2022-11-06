@@ -13,13 +13,9 @@ export const partners: PartnersLogos[] = [
         "link": "https://www.mop.pt"
     },
     {
-        "image": "./images/parceiros/fenix.png",
-        "alt": "Fénix "
+        "image": "./images/parceiros/mesa_da_rita.png",
+        "alt": "A Mesa da Rita "
     },
-/*     {
-        "image": "../images/logos/partner1.png",
-        "alt": "Mesa da Rita"
-    }, */
     {
         "image": "./images/parceiros/tpa.png",
         "alt": "TPA Advogados",
