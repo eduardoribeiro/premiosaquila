@@ -14,7 +14,8 @@ export const partners: PartnersLogos[] = [
     },
     {
         "image": "./images/parceiros/mesa_da_rita.png",
-        "alt": "A Mesa da Rita "
+        "alt": "A Mesa da Rita ",
+        "link": "https://www.facebook.com/amesadarita"
     },
     {
         "image": "./images/parceiros/tpa.png",

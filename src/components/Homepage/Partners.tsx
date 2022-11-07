@@ -1,4 +1,5 @@
 import { Typography, Grid, Box, Stack } from "@mui/material"
+import { navigate } from "gatsby"
 import React from "react"
 import { PartnersLogos } from "../../content/partners"
 import theme from "../../theme"
@@ -10,7 +11,8 @@ export interface PartnersProps {
 
 const Partners = ({ partnersData }: PartnersProps) => {
   const handleOnClick = (link: string | undefined) => {
-    console.log(link)
+    console.log(link);
+    window.open(link);
   };
   return (
   <Box>
