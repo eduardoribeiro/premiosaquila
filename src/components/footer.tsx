@@ -1,23 +1,24 @@
+import { Grid, styled } from "@mui/material"
 import React from "react"
 
+const FooterElement = styled("footer")(({ theme }) => ({
+  paddingTop: theme.spacing(1),
+  position: "absolute",
+  bottom: 20,
+  width: `var(--size-content)`,
+}))
+
 const Footer: React.FC<any> = ({ children }) => (
-  <footer
-    style={{
-      marginTop: `var(--space-5)`,
-      fontSize: `var(--font-sm)`,
-    }}
-  >
+  <FooterElement>
     {children ? (
       children
     ) : (
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          alignContent: "center",
-        }}
-      >
-        © {new Date().getFullYear()} &middot;
+      <Grid
+      container
+      sx={{ justifyContent: "space-between", alignItems: "flex-end" }}
+    >
+      <Grid item>
+        © {new Date().getF/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/out/vs/code/electron-sandbox/workbench/workbench.htmlullYear()} &middot;
         {` `}
         <a href="https://www.premios-aquila.pt">
           <img
@@ -27,9 +28,11 @@ const Footer: React.FC<any> = ({ children }) => (
             title="Fénix - Associação Cinematográfica"
           />
         </a>
-      </div>
+      </Grid>
+      <Grid item></Grid>
+    </Grid>
     )}
-  </footer>
+  </FooterElement>
 )
 
 export default Footer
